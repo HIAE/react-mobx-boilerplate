@@ -1,6 +1,6 @@
 {
-  "name": "react-mobx-realworld-example-app",
-  "version": "0.1.0",
+  "name": "react-mobx-boilerplate",
+  "version": "0.0.0",
   "private": true,
   "homepage": "https://react-mobx.realworld.io",
   "license": "MIT",
@@ -18,7 +18,9 @@
     "query-string": "5.0.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-flexbox-grid": "^2.0.0",
     "react-router-dom": "4.2.2",
+    "styled-components": "^2.2.4",
     "superagent": "^3.6.0",
     "superagent-promise": "^1.1.0"
   },

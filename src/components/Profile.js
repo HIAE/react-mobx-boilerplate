@@ -1,4 +1,3 @@
-import ArticleList from './ArticleList';
 import React from 'react';
 import LoadingSpinner from './LoadingSpinner';
 import RedError from './RedError';
@@ -168,12 +167,7 @@ export default class Profile extends React.Component {
                 {this.renderTabs()}
               </div>
 
-              <ArticleList
-                articles={articlesStore.articles}
-                totalPagesCount={articlesStore.totalPagesCount}
-                onSetPage={this.handleSetPage}
-                loading={articlesStore.isLoading}
-              />
+              content
             </div>
 
           </div>

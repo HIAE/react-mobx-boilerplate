@@ -1,11 +1,12 @@
 import { observable, action, reaction } from 'mobx';
-import agent from '../agent';
+import api from '../api';
 
 class CommonStore {
 
-  @observable appName = 'Conduit';
+  @observable appName = 'React-Mobx';
   @observable token = window.localStorage.getItem('jwt');
   @observable appLoaded = false;
+  @observable example = null
 
   @observable tags = [];
   @observable isLoadingTags = false;
@@ -25,7 +26,7 @@ class CommonStore {
 
   @action loadTags() {
     this.isLoadingTags = true;
-    return agent.Tags.getAll()
+    return api.Tags.getAll()
       .then(action(({ tags }) => { this.tags = tags.map(t => t.toLowerCase()); }))
       .finally(action(() => { this.isLoadingTags = false; }))
   }
@@ -36,6 +37,14 @@ class CommonStore {
 
   @action setAppLoaded() {
     this.appLoaded = true;
+  }
+
+  @action getExampleText() {
+    return this.example;
+  }
+
+  @action setExampleText(new_text) {
+    this.example = new_text;
   }
 
 }

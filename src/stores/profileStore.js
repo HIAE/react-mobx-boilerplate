@@ -1,5 +1,5 @@
 import { observable, action } from 'mobx';
-import agent from '../agent';
+import api from '../api';
 
 class ProfileStore {
 
@@ -8,7 +8,7 @@ class ProfileStore {
 
   @action loadProfile(username) {
     this.isLoadingProfile = true;
-    agent.Profile.get(username)
+    api.Profile.get(username)
       .then(action(({ profile }) => { this.profile = profile; }))
       .finally(action(() => { this.isLoadingProfile = false; }))
   }
@@ -16,7 +16,7 @@ class ProfileStore {
   @action follow() {
     if (this.profile && !this.profile.following) {
       this.profile.following = true;
-      agent.Profile.follow(this.profile.username)
+      api.Profile.follow(this.profile.username)
         .catch(action(() => { this.profile.following = false }));
     }
   }
@@ -24,7 +24,7 @@ class ProfileStore {
   @action unfollow() {
     if (this.profile && this.profile.following) {
       this.profile.following = false;
-      agent.Profile.unfollow(this.profile.username)
+      api.Profile.unfollow(this.profile.username)
         .catch(action(() => { this.profile.following = true }));
     }
   }

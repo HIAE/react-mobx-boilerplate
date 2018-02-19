@@ -5,22 +5,22 @@ import { HashRouter } from 'react-router-dom';
 import { useStrict } from 'mobx';
 import { Provider } from 'mobx-react';
 
-import App from './components/App';
+import App from './containers/App';
 
-import articlesStore from './stores/articlesStore';
-import commentsStore from './stores/commentsStore';
+// import articlesStore from './stores/articlesStore';
+// import commentsStore from './stores/commentsStore';
 import authStore from './stores/authStore';
 import commonStore from './stores/commonStore';
-import editorStore from './stores/editorStore';
+// import editorStore from './stores/editorStore';
 import userStore from './stores/userStore';
 import profileStore from './stores/profileStore';
 
 const stores = {
-  articlesStore,
-  commentsStore,
+  // articlesStore,
+  // commentsStore,
   authStore,
   commonStore,
-  editorStore,
+  // editorStore,
   userStore,
   profileStore,
 };
